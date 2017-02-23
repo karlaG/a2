@@ -23,7 +23,7 @@
 		<p>and my birthdate is</p>
 
 		<label for="month">*Month</label>
-		<select name="month" id="month" size="3" required>
+		<select name="month" id="month" required>
 			<option value="1">Jan</option>
 			<option value="2">Feb</option>
 			<option value="3">Mar</option>
