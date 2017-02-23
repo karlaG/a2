@@ -24,6 +24,7 @@
 
 		<label for="month">*Month</label>
 		<select name="month" id="month" required>
+			<option>Choose</option>
 			<option value="1">Jan</option>
 			<option value="2">Feb</option>
 			<option value="3">Mar</option>
