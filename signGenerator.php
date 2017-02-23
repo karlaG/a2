@@ -8,18 +8,20 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href='generator.css' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 </head>
 
 <body>
-	<h1>Tell me my sign:</h1>
+	<header>Tell me my sign...</header>
 
-	<form action="GET" method="signGenerator.php">
+	<form method="GET" action="signGenerator.php">
 
 		<p>I am</p>
 		<input type="radio" name="gender" value="female" CHECKED> Female <br>
 		<input type="radio" name="gender" value="male"> Male <br>
 
 		<p>and my birthdate is</p>
+
 		<label for="month">Month</label>
 		<select name="month">
 			<option value="1">Jan</option>
@@ -42,6 +44,20 @@
 		<input type="submit" value="Please and thank you :)">
 
 	</form>
+
+	<?php if ($form->isSubmitted()): ?>
+		<div class="wrapper">
+			<?php if ($gender == 'female'): ?>
+				<img src="female-gender-sign.jpg" alt="female gender sign">
+			<?php else: ?>
+				<img src="male-gender-sign.jpg" alt="male gender sign">
+			<?php endif; ?>
+
+			<div class="sign"> <?php echo $sign; ?> </div>
+			<br><br>
+			<div class="summary"> <?php echo $summary; ?> </div>
+		</div>
+	<?php endif; ?>
 
 </body>
 </html>
