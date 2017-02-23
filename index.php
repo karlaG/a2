@@ -23,8 +23,8 @@
 		<p>and my birthdate is</p>
 
 		<label for="month">*Month</label>
-		<select name="month" required>
-			<option></option>
+		<select name="month" id="month" required>
+			<option>...</option>
 			<option value="1">Jan</option>
 			<option value="2">Feb</option>
 			<option value="3">Mar</option>
@@ -40,7 +40,7 @@
 		</select>
 
 		<label for="day">*Day</label>
-			<input type="text" name="day" min="1" max="31" required>
+			<input type="number" id="day" name="day" min="1" max="31" required>
 		<br><br><br>
 		<input type="submit" value="Please and thank you :)">
 		<br><br>
