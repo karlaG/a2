@@ -8,10 +8,17 @@ $signs = json_decode($signsJson, true);
 
 $form = new DWA\Form($_GET);
 
-if( $form->isSubmitted() ) {
+if ($form->isSubmitted()) {
   $gender = $form->get('gender', $default = 'female');
   $month = $form->get('month', $default = '1');
   $day = $form->get('day', $default = '1');
+
+  $errors = $form->validate(
+    [
+      'gender' => 'required',
+      'month' => 'required',
+      'day' => 'required|numeric|min:1|max:31',
+  ]);
 
   $birthDate = $month.'.'.$day;
 

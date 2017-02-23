@@ -32,7 +32,7 @@ class Form {
     /**
 	* Determines if a single checkbox is checked
     * Example usage:
-    *   <input type='checkbox' name='caseSensitive' <?php if($form->isChosen('caseSensitive')) echo 'CHECKED' ?>>
+    *   <input type='checkbox' name='caseSensitive' <?php if($form->isChecked('caseSensitive')) echo 'CHECKED' ?>>
 	*/
     public function isChosen($name) {
         $value = isset($this->request[$name]) ? true : false;
@@ -108,7 +108,7 @@ class Form {
             }
         }
         # Set public property hasErrors as Boolean
-        $this->hasErrors = !empty($errors);
+        $this->hasErrors = empty($errors);
         return $errors;
     }
     /**
@@ -147,7 +147,7 @@ class Form {
 	* Returns boolean if given value contains only numbers
 	*/
     private function numeric($value) {
-        return ctype_digit(str_replace(' ','', $value));
+        return is_numeric(str_replace(' ','', $value));
     }
     /**
 	* Returns boolean if the given value is not blank

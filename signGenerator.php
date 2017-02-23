@@ -16,14 +16,15 @@
 
 	<form method="GET" action="signGenerator.php">
 
-		<p>I am</p>
-		<input type="radio" name="gender" value="female" CHECKED> Female <br>
-		<input type="radio" name="gender" value="male"> Male <br>
+		<p>*I am</p>
+		<input type="radio" name="gender" value="female" CHECKED required> Female <br>
+		<input type="radio" name="gender" value="male" required> Male <br>
 
 		<p>and my birthdate is</p>
 
-		<label for="month">Month</label>
-		<select name="month">
+		<label for="month">*Month</label>
+		<select name="month" required>
+			<option></option>
 			<option value="1">Jan</option>
 			<option value="2">Feb</option>
 			<option value="3">Mar</option>
@@ -38,10 +39,12 @@
 			<option value="12">Dec</option>
 		</select>
 
-		<label for="day">Day</label>
-			<input type="number" name="day" value="1" min="1" max="31">
+		<label for="day">*Day</label>
+			<input type="text" name="day" min="1" max="31" required>
 		<br><br><br>
 		<input type="submit" value="Please and thank you :)">
+		<br><br>
+		<p>* denotes a required field.</p>
 
 	</form>
 
@@ -53,9 +56,9 @@
 				<img src="male-gender-sign.jpg" alt="male gender sign">
 			<?php endif; ?>
 
-			<div class="sign"> <?php echo $sign; ?> </div>
+			<div class="sign"> <?=$sign?> </div>
 			<br><br>
-			<div class="summary"> <?php echo $summary; ?> </div>
+			<div class="summary"> <?=$summary?> </div>
 		</div>
 	<?php endif; ?>
 
