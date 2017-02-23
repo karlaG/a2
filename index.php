@@ -14,7 +14,7 @@
 <body>
 	<header>Tell me my sign...</header>
 
-	<form method="GET" action="signGenerator.php">
+	<form method="GET" action="index.php">
 
 		<p>*I am</p>
 		<input type="radio" name="gender" value="female" CHECKED required> Female <br>
